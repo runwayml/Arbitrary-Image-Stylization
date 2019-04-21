@@ -1,0 +1,11 @@
+python: 3.6
+cuda: 9.0
+entrypoint: python runway_model.py
+framework: tensorflow
+spec:
+  gpu: True
+  cpu: True
+build_steps:
+  - pip install magenta
+  - pip install runway-python==0.0.67
+  - wget https://storage.googleapis.com/download.magenta.tensorflow.org/models/arbitrary_style_transfer.tar.gz && tar xf arbitrary_style_transfer.tar.gz && rm arbitrary_style_transfer.tar.gz
