@@ -6,6 +6,8 @@ spec:
   gpu: True
   cpu: True
 build_steps:
+  - pip install tensorflow-probability==0.5.0
   - pip install magenta
   - pip install runway-python==0.0.67
+  - apt-get update && apt-get install -y wget
   - wget https://storage.googleapis.com/download.magenta.tensorflow.org/models/arbitrary_style_transfer.tar.gz && tar xf arbitrary_style_transfer.tar.gz && rm arbitrary_style_transfer.tar.gz
